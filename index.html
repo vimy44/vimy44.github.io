@@ -5,21 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cybersecurity Portfolio - Christopher Jones</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; color: #333; line-height: 1.6; }
-    h1, h2 { color: #003366; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .project { margin-bottom: 25px; }
-    .resume, .contact { margin-top: 40px; }
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --link-color: #0066cc;
+      --heading-color: #003366;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1e1e1e;
+      --text-color: #ddd;
+      --link-color: #66b0ff;
+      --heading-color: #66ccff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2 {
+      color: var(--heading-color);
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .project {
+      margin-bottom: 25px;
+    }
+
+    .resume, .contact {
+      margin-top: 40px;
+    }
+
+    .toggle-button {
+      margin-bottom: 30px;
+      padding: 6px 12px;
+      background: none;
+      border: 2px solid var(--link-color);
+      color: var(--link-color);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .toggle-button:hover {
+      background: var(--link-color);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
+  <button class="toggle-button" onclick="toggleTheme()">Toggle Dark Mode</button>
+
   <h1>Cybersecurity Portfolio</h1>
-  <p><strong>Christopher Jones</strong><br>Nova Scotia, Canada<br>Email: w0136969@nscc.ca</p>
+  <p><strong>Christopher Jones</strong><br>Nova Scotia, Canada<br>Email: <a href="mailto:cjones.cyber@proton.me">cjones.cyber@proton.me</a></p>
 
   <div class="resume">
     <h2>📄 Resume</h2>
-    <p><a href="Resume/Christopher.Jones.Resume.pdf" target="_blank">View Resume</a></p>
+    <p><a href="1.Christopher.Jones.Resume.pdf" target="_blank">View Resume</a></p>
   </div>
 
   <h2>🔐 Projects</h2>
@@ -28,9 +82,9 @@
     <h3>🧬 Serious Malware</h3>
     <p>Developed AES-encrypted reverse shell malware with stealth delivery via a fake OBS installer.</p>
     <ul>
-      <li><a href="Serious-Malware/Serious%20Malware.pdf" target="_blank">Project Report (PDF)</a></li>
-      <li><a href="Serious-Malware/serious_malware_delivery.py" target="_blank">Delivery Script (Python)</a></li>
-      <li><a href="Serious-Malware/payload_encrypter.py" target="_blank">Payload Encrypter (Python)</a></li>
+      <li><a href="Serious Malware.pdf" target="_blank">Project Report (PDF)</a></li>
+      <li><a href="serious_malware_delivery.py" target="_blank">Delivery Script (Python)</a></li>
+      <li><a href="payload_encrypter.py" target="_blank">Payload Encrypter (Python)</a></li>
     </ul>
   </div>
 
@@ -38,8 +92,8 @@
     <h3>💻 USB Drop Attack</h3>
     <p>Simulated a rogue USB device attack that silently exfiltrates host system information.</p>
     <ul>
-      <li><a href="USB-Drop-Attack/USB%20Drops.pdf" target="_blank">Project Report (PDF)</a></li>
-      <li><a href="USB-Drop-Attack/usb_exfiltration_script.py" target="_blank">Attack Script (Python)</a></li>
+      <li><a href="USB Drops.pdf" target="_blank">Project Report (PDF)</a></li>
+      <li><a href="usb_exfiltration_script.py" target="_blank">Attack Script (Python)</a></li>
     </ul>
   </div>
 
@@ -47,8 +101,8 @@
     <h3>🔒 LAMP Server Hardening</h3>
     <p>Bash script that installs and hardens a LAMP stack for secure deployment on Ubuntu.</p>
     <ul>
-      <li><a href="LAMP-Hardening/LAMP-install-harden-script.pdf" target="_blank">Script Report (PDF)</a></li>
-      <li><a href="LAMP-Hardening/lamp_harden.sh" target="_blank">Shell Script</a></li>
+      <li><a href="LAMP-install-harden-script.pdf" target="_blank">Script Report (PDF)</a></li>
+      <li><a href="lamp_harden.sh" target="_blank">Shell Script</a></li>
     </ul>
   </div>
 
@@ -56,7 +110,7 @@
     <h3>🧠 Cybersecurity Awareness Campaign</h3>
     <p>Designed and deployed an internal campaign focused on ransomware prevention and phishing awareness.</p>
     <ul>
-      <li><a href="Awareness-Campaign/CYBERSECURITY%20AWARENESS%20CAMPAIGN.pdf" target="_blank">Campaign Report</a></li>
+      <li><a href="CYBERSECURITY AWARENESS CAMPAIGN.pdf" target="_blank">Campaign Report</a></li>
     </ul>
   </div>
 
@@ -64,8 +118,8 @@
     <h3>🏗️ Secure 3-Tier Enterprise System</h3>
     <p>Developed architecture and policies for a secure enterprise-grade system following NIST and OWASP best practices.</p>
     <ul>
-      <li><a href="3-Tier-System/Secure%203-Tier%20Enterprise%20System.pdf" target="_blank">Proposal Report</a></li>
-      <li><a href="3-Tier-System/Secure%203-Tier%20Enterprise%20System%20Presentation.pptx" target="_blank">Presentation Slides</a></li>
+      <li><a href="Secure 3-Tier Enterprise System.pdf" target="_blank">Proposal Report</a></li>
+      <li><a href="Secure 3-Tier Enterprise System Presentation.pptx" target="_blank">Presentation Slides</a></li>
     </ul>
   </div>
 
@@ -73,7 +127,7 @@
     <h3>📎 Embedded Macros</h3>
     <p>Built a malicious VBA macro to demonstrate risks of document-based malware.</p>
     <ul>
-      <li><a href="Embedded-Macros/Embedded%20Macros.pdf" target="_blank">Macro Report</a></li>
+      <li><a href="Embedded Macros.pdf" target="_blank">Macro Report</a></li>
     </ul>
   </div>
 
@@ -81,7 +135,7 @@
     <h3>🧟 Malware Execution</h3>
     <p>Executed and analyzed malware in a secure lab to investigate behavior and artifacts.</p>
     <ul>
-      <li><a href="Malware-Execution/Malware%20Execution.pdf" target="_blank">Lab Report</a></li>
+      <li><a href="Malware Execution.pdf" target="_blank">Lab Report</a></li>
     </ul>
   </div>
 
@@ -89,7 +143,7 @@
     <h3>🧱 CPTED Physical Security Assessment</h3>
     <p>Performed a real-world site security audit using CPTED principles.</p>
     <ul>
-      <li><a href="CPTED-Assessment/CPTED%20Physical%20Security%20Assessment.pdf" target="_blank">Assessment Report</a></li>
+      <li><a href="CPTED Physical Security Assessment.pdf" target="_blank">Assessment Report</a></li>
     </ul>
   </div>
 
@@ -97,7 +151,7 @@
     <h3>🌐 Network Investigation</h3>
     <p>Analyzed PCAP traffic to identify keylogger activity and credential theft attempts.</p>
     <ul>
-      <li><a href="Network-Investigation/Network%20Investigation.pdf" target="_blank">PCAP Analysis Report</a></li>
+      <li><a href="Network Investigation.pdf" target="_blank">PCAP Analysis Report</a></li>
     </ul>
   </div>
 
@@ -105,13 +159,20 @@
     <h3>🎤 Server Hardening Presentation</h3>
     <p>Team project to lock down a Windows Server and defend a hidden flag file from attack.</p>
     <ul>
-      <li><a href="Presentations/Server%20Hardening%20Presentation.pptx" target="_blank">Slide Deck</a></li>
+      <li><a href="Server Hardening Presentation.pptx" target="_blank">Slide Deck</a></li>
     </ul>
   </div>
 
   <div class="contact">
     <h2>📫 Contact</h2>
-    <p>Email: <a href="mailto:w0136969@nscc.ca">w0136969@nscc.ca</a></p>
+    <p>Email: <a href="mailto:cjones.cyber@proton.me">cjones.cyber@proton.me</a></p>
   </div>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    }
+  </script>
 </body>
 </html>
